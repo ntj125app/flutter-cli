@@ -13,6 +13,13 @@ RUN apt update && apt upgrade -y && apt autoremove -y && \
     flutter config --no-analytics && \
     flutter precache
 
+# Install Java
+RUN apt install -y openjdk-19-jdk && \
+    update-alternatives --set java /usr/lib/jvm/java-19-openjdk-amd64/bin/java && \
+    update-alternatives --set javac /usr/lib/jvm/java-19-openjdk-amd64/bin/javac
+
+ENV JAVA_HOME=/usr/lib/jvm/java-19-openjdk-amd64
+
 # Install Android SDK
 RUN cd /tmp && \
     curl -L https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip -o android-cli.zip && \
