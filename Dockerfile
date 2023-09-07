@@ -4,7 +4,7 @@ ENV PATH="/usr/local/flutter-cli/flutter/bin:/usr/local/android-cli/cmdline-tool
 
 # Install Flutter Dependencies
 RUN apt update && apt upgrade -y && apt autoremove -y && \
-    apt install -y bash curl file git mkdir rm unzip which xz-utils zip libglu1-mesa && \
+    apt install -y bash curl file git unzip xz-utils zip libglu1-mesa && \
     mkdir -p /usr/local/flutter-cli && \
     cd /tmp && \
     curl -L https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.2-stable.tar.xz -o flutter.tar.xz && \
