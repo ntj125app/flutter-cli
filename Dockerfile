@@ -27,10 +27,10 @@ RUN cd /tmp && \
     rm -rf android-cli.zip && \
     mkdir -p /root/.android && \
     touch /root/.android/repositories.cfg && \
-    yes | sdkmanager --licenses && \
-    sdkmanager --update && \
-    sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.0" "cmdline-tools;latest" && \
-    yes | sdkmanager --licenses
+    mkdir -p /usr/local/android-cli/cmdline-tools/latest && \
+    yes | sdkmanager --licenses --sdk_root=/usr/local/android-cli && \
+    sdkmanager --update --sdk_root=/usr/local/android-cli && \
+    sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.0" "cmdline-tools;latest" --sdk_root=/usr/local/android-cli
 
 # Check Flutter Version
 RUN flutter doctor -v
