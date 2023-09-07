@@ -1,6 +1,6 @@
 FROM ubuntu:jammy
 
-ENV PATH="/usr/local/flutter-cli/flutter/bin:/usr/local/android-cli/cmdline-tools/tools/bin:/usr/local/android-cli/platform-tools:/usr/local/android-cli/tools/bin:${PATH}"
+ENV PATH="/usr/local/flutter-cli/flutter/bin:/usr/local/android-cli/cmdline-tools/bin:/usr/local/android-cli/platform-tools:${PATH}"
 
 # Install Flutter Dependencies
 RUN apt update && apt upgrade -y && apt autoremove -y && \
