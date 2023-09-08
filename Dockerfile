@@ -14,7 +14,8 @@ RUN apt update && apt upgrade -y && apt autoremove -y && \
     git config --global --add safe.directory /usr/local/flutter-cli/flutter && \
     flutter config --no-analytics && \
     flutter --disable-telemetry && \
-    flutter precache
+    flutter precache && \
+    flutter upgrade
 
 # Install Java
 RUN apt install -y openjdk-19-jdk && \
