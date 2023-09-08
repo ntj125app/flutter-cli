@@ -8,7 +8,7 @@ RUN apt update && apt upgrade -y && apt autoremove -y && \
     apt install -y bash curl file git unzip xz-utils zip libglu1-mesa && \
     mkdir -p /usr/local/flutter-cli && \
     cd /tmp && \
-    curl -L https://github.com/flutter/flutter/archive/refs/tags/3.13.3.tar.gz -o flutter.tar.xz && \
+    curl -L https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.2-stable.tar.xz -o flutter.tar.xz && \
     tar xf flutter.tar.xz -C /usr/local/flutter-cli && \
     rm -rf flutter.tar.xz && \
     git config --global --add safe.directory /usr/local/flutter-cli/flutter && \
