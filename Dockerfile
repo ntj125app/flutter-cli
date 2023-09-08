@@ -34,3 +34,5 @@ RUN cd /tmp && \
 
 # Check Flutter Version
 RUN flutter doctor -v
+
+ENTRYPOINT ["flutter"]
