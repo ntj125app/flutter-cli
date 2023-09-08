@@ -34,6 +34,14 @@ RUN cd /tmp && \
     sdkmanager --update --sdk_root=/usr/local/android-cli && \
     sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.0" "cmdline-tools;latest" --sdk_root=/usr/local/android-cli
 
+# Privilege drop
+RUN adduser --disabled-password --gecos '' flutter && \
+    chown -R flutter:flutter /usr/local/flutter-cli && \
+    chown -R flutter:flutter /usr/local/android-cli && \
+    chown -R flutter:flutter /root/.android
+
+USER flutter
+
 # Check Flutter Version
 RUN flutter doctor -v
 
