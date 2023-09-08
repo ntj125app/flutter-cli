@@ -11,6 +11,7 @@ RUN apt update && apt upgrade -y && apt autoremove -y && \
     curl -L https://github.com/flutter/flutter/archive/refs/tags/3.13.3.tar.gz -o flutter.tar.xz && \
     tar xf flutter.tar.xz -C /usr/local/flutter-cli && \
     rm -rf flutter.tar.xz && \
+    git config --global --add safe.directory /usr/local/flutter-cli/flutter && \
     flutter config --no-analytics && \
     flutter precache
 
