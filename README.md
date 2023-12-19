@@ -11,3 +11,5 @@ This flutter CLI container only used for Android / iOS development toolchain
 License can be read in [LICENSE](https://github.com/ntj125app/flutter-cli/blob/latest/LICENSE)
 
 # UPDATE
+
+[19 December 2023] - Updated Repo Commit
